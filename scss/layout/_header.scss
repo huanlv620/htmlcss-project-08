@@ -11,6 +11,7 @@
 
 .top-bar {
     @extend %FlexItemCenter;
+    position: relative;
     padding: 30px 0px;
 
     @include abstracts.breakpoint(lg) {
@@ -44,12 +45,28 @@
 
     &__list {
         @extend %FlexItemCenter;
-        column-gap: 30px;
+    }
+
+    &__item {
+        &:first-child a {
+            padding-left: 0;
+        }
+
+        &:last-child a {
+            padding-right: 0;
+        }
+
+        &:hover .dropdown {
+            display: block;
+        }
     }
 
     &__link {
         display: flex;
+        align-items: center;
         column-gap: 6px;
+        height: 50px;
+        padding: 0 15px;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
@@ -57,6 +74,8 @@
 
     &__arrow {
         margin-top: 3px;
+        width: 12px;
+        height: 12px;
     }
 }
 
