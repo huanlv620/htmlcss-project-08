@@ -1403,6 +1403,7 @@ html {
   position: absolute;
   left: 0;
   right: 0;
+  display: none;
   width: min(1240px, 100%); /*Lấy giá trị nhỏ nhất*/
   padding-top: 54px;
 }
@@ -1439,7 +1440,7 @@ html {
   column-gap: 14px;
 }
 .menu-column + .menu-column {
-  margin-top: var(--inner-padding);
+  margin-top: 19px;
 }
 .menu-column__icon {
   position: relative;
@@ -1447,13 +1448,18 @@ html {
   width: 36px;
   height: 36px;
 }
+@media (max-width: 1199.98px) {
+  .menu-column__icon {
+    display: none;
+  }
+}
 .menu-column__icon-1 {
   position: absolute;
   top: 0;
   left: 0;
   width: 30px;
   height: 30px;
-  object-fit: cover;
+  object-fit: contain;
 }
 .menu-column__icon-2 {
   position: absolute;
