@@ -97,6 +97,14 @@
 
         @include abstracts.breakpoint(lg) {
             width: 100%;
+
+            &:hover .dropdown {
+                display: none;
+            }
+
+            &--active .dropdown {
+                display: block !important;
+            }
         }
     }
 
@@ -122,6 +130,15 @@
         margin-top: 3px;
         width: 12px;
         height: 12px;
+
+        @include abstracts.breakpoint(lg) {
+            rotate: -90deg;
+            transition: rotate 0.3s;
+        }
+    }
+
+    &__item--active &__arrow {
+        rotate: 0deg;
     }
 }
 
