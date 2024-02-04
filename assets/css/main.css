@@ -1292,8 +1292,8 @@ select {
 }
 html.dark {
   --text-color: #fff;
-  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%)
-      saturate(7482%) hue-rotate(72deg) brightness(99%) contrast(99%);
+  --icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7482%) hue-rotate(72deg) brightness(99%)
+      contrast(99%);
   --body-bg: #292e39;
   --header-bg-color: #171c28;
   --top-act-group-bg-color: #292e39;
@@ -1301,11 +1301,13 @@ html.dark {
   --top-act-separate: #ededf6;
   --drop-down-bg-color: #2f3441;
   --drop-down-shadow-color: rgba(23, 28, 40, 0.4);
-  --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(12%)
-      saturate(913%) hue-rotate(186deg) brightness(97%) contrast(92%);
+  --dropdown-arrow-color: brightness(0) saturate(100%) invert(18%) sepia(12%) saturate(913%) hue-rotate(186deg)
+      brightness(97%) contrast(92%);
   --top-menu-border-color: #171c28;
-  --menu-column-icon-color: brightness(0) saturate(100%) invert(91%) sepia(2%)
-      saturate(176%) hue-rotate(201deg) brightness(107%) contrast(98%);
+  --menu-column-icon-color: brightness(0) saturate(100%) invert(91%) sepia(2%) saturate(176%) hue-rotate(201deg)
+      brightness(107%) contrast(98%);
+  --sidebar-bg: #292e39;
+  --sidebar-shadow: rgba(23, 28, 40, 0.04);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1315,8 +1317,8 @@ html.dark {
 
 html {
   --text-color: #1a162e;
-  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(10%)
-      saturate(4042%) hue-rotate(212deg) brightness(90%) contrast(95%);
+  --icon-color: brightness(0) saturate(100%) invert(8%) sepia(10%) saturate(4042%) hue-rotate(212deg) brightness(90%)
+      contrast(95%);
   --body-bg: #f6f6f6;
   --header-bg-color: #eee;
   --top-act-group-bg-color: #fff;
@@ -1325,6 +1327,8 @@ html {
   --drop-down-bg-color: #fff;
   --drop-down-shadow-color: rgba(200, 200, 200, 0.4);
   --top-menu-border-color: #d2d1d6;
+  --sidebar-bg: #fff;
+  --sidebar-shadow: rgba(200, 200, 200, 0.04);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1377,17 +1381,24 @@ html {
     inset: 0 50% 0 0;
     z-index: 9;
     padding: 20px 0;
+    border-radius: 0 20px 20px 0;
     margin-left: 0;
-    background: #fff;
+    background: var(--sidebar-bg);
     translate: -100%;
     transition: translate 0.5s;
   }
   .navbar.show {
     translate: 0;
+    box-shadow: 0px 40px 90px 20px var(--sidebar-shadow);
   }
   .navbar.show ~ .navbar__overlay {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar {
+    inset: 0 20% 0 0;
   }
 }
 .navbar__close-btn {
@@ -1397,6 +1408,11 @@ html {
   .navbar__close-btn {
     display: block;
     padding: 10px 40px;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__close-btn {
+    padding: 0px 20px 10px;
   }
 }
 .navbar__overlay {
@@ -1417,7 +1433,17 @@ html {
     flex-direction: column;
     align-items: start;
     overflow-y: auto;
-    height: calc(100% - 26px);
+    height: calc(100% - 40px);
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar__list {
+    height: calc(100% - 140px);
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__list {
+    height: calc(100% - 124px);
   }
 }
 .navbar__item:hover .dropdown {
@@ -1450,6 +1476,12 @@ html {
     padding: 0 40px;
     font-size: 1.6rem;
     line-height: 150%;
+  }
+}
+@media (max-width: 575.98px) {
+  .navbar__link {
+    height: 44px;
+    padding: 0 20px;
   }
 }
 .navbar__arrow {
@@ -1508,6 +1540,27 @@ html {
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.nav-btn {
+  height: 50px;
+  align-items: center;
+  padding: 0 40px;
+}
+@media (max-width: 575.98px) {
+  .nav-btn {
+    height: 44px;
+    padding: 0 20px;
+  }
+}
+.nav-btn__title, .nav-btn__qnt {
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 146.667%;
+}
+.nav-btn__qnt {
+  margin-left: auto;
 }
 
 .logo {
