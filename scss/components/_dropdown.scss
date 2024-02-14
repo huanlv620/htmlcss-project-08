@@ -36,10 +36,15 @@
         }
 
         @include abstracts.breakpoint(lg) {
+            padding: 0 40px;
+
             border-radius: 0;
             background: transparent;
             box-shadow: none;
-            padding: 0 40px;
+        }
+
+        @include abstracts.breakpoint(sm) {
+            padding: 0 20px;
         }
     }
 }
