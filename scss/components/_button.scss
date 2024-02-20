@@ -42,6 +42,9 @@
 .btn {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
+
     height: 46px;
     padding: 0 20px;
     border-radius: 6px;
@@ -50,6 +53,12 @@
     font-size: 1.8rem;
     font-weight: 500;
     user-select: none;
+
+    + .btn {
+        &:not(.btn--no-margin) {
+            margin-left: 20px;
+        }
+    }
 
     &--text {
         background: transparent;
@@ -82,8 +91,4 @@
     &:hover {
         opacity: 0.9;
     }
-}
-
-.btn + .btn {
-    margin-left: 20px;
 }
