@@ -7,8 +7,14 @@ $error-color: #ed4337;
         pointer-events: none;
     }
 
-    &__group + &__group {
+    &__group {
         margin-top: 30px;
+    }
+
+    &__group {
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
     }
 
     &__group--inline {
@@ -44,6 +50,10 @@ $error-color: #ed4337;
         &:focus-within {
             border-color: #77dae6;
         }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
     }
 
     &__input {
@@ -59,7 +69,7 @@ $error-color: #ed4337;
         }
 
         &::placeholder {
-            color: #d2d1d6;
+            color: var(--form-placeholder-color);
         }
 
         @include abstracts.screen(md) {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="">
+<html lang="en">
     <head>
         <!-- Test git pull -->
         <meta charset="UTF-8" />
@@ -28,7 +28,7 @@
             <div class="auth__intro">
                 <a href="./" class="logo auth__intro-logo d-none d-md-flex">
                     <img src="./assets/icons/logo.svg" alt="grocerymart" class="logo__img" />
-                    <h1 class="logo__title">grocerymart</h1>
+                    <h2 class="logo__title">grocerymart</h2>
                 </a>
                 <img src="./assets/img/auth/intro.svg" alt="" class="auth__intro-img" />
                 <p class="auth__intro-text">
@@ -56,7 +56,15 @@
                     <form action="./index-logined.html" class="form auth__form">
                         <div class="form__group">
                             <div class="form__text-input">
-                                <input type="email" name="" id="" placeholder="Email" class="form__input" required />
+                                <input
+                                    type="email"
+                                    name=""
+                                    id=""
+                                    placeholder="Email"
+                                    value="admin@grocerymart.com"
+                                    class="form__input"
+                                    required
+                                />
                                 <img src="./assets/icons/message.svg" alt="" class="form__input-icon" />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
                             </div>
@@ -72,6 +80,7 @@
                                     class="form__input"
                                     required
                                     minlength="6"
+                                    value="123456"
                                 />
                                 <img src="./assets/icons/look.svg" alt="" class="form__input-icon" />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
@@ -88,6 +97,7 @@
                                     class="form__input"
                                     required
                                     minlength="6"
+                                    value="123456"
                                 />
                                 <img src="./assets/icons/look.svg" alt="" class="form__input-icon" />
                                 <img src="./assets/icons/form-error.svg" alt="" class="form__input-icon-error" />
@@ -104,7 +114,7 @@
                         <div class="form__group auth__btn-group">
                             <button class="btn btn--primary auth__btn form__submit-btn">Sign Up</button>
                             <button class="btn btn--outline btn--no-margin">
-                                <img src="./assets/icons/google.svg" alt="" class="btn__icon" />
+                                <img src="./assets/icons/google.svg" alt="" class="btn__icon icon" />
                                 Sign in with Google
                             </button>
                         </div>
