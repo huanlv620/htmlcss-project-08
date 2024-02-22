@@ -4,6 +4,11 @@
     display: flex;
     min-height: 100vh;
 
+    @supports (-webkit-touch-callout: none) {
+        /*Kiểm tra xem có phải trình duyệt sanfari không*/
+        min-height: -webkit-fill-available; /*chỉ áp dụng trên iphone*/
+    }
+
     &__intro,
     &__content {
         flex: 1;
@@ -42,6 +47,12 @@
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 144.444%;
+
+            @include abstracts.screen(md) {
+                max-width: 306px;
+                font-size: 15px;
+                line-height: 146.667%;
+            }
         }
     }
 
@@ -77,6 +88,11 @@
         font-size: 3rem;
         font-weight: 500;
         line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 2.2rem;
+            line-height: 145.455%;
+        }
     }
 
     &__desc {
@@ -86,11 +102,21 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            max-width: 326px;
+            font-size: 1.4rem;
+            line-height: 142.857%;
+        }
     }
 
     &__form {
         width: 100%;
-        margin-top: 30px;
+        margin-top: 60px;
+
+        @include abstracts.screen(md) {
+            margin-top: 30px;
+        }
     }
 
     &__link {
@@ -98,19 +124,27 @@
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 146.667%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
     }
 
     &__btn-group {
         display: flex;
         flex-direction: column;
         gap: 30px;
-        margin-top: 50px;
+        margin-top: 50px !important;
     }
 
     &__btn {
         width: 100%;
         border-radius: 10px;
         background: #ffb700;
+
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+        }
     }
 
     &__text {
@@ -122,5 +156,19 @@
         color: #9e9da8;
         font-size: 1.8rem;
         line-height: 144.444%;
+
+        @include abstracts.screen(md) {
+            margin-top: 56px;
+        }
+
+        &-link {
+            font-size: 1.8rem;
+        }
+
+        &-link {
+            @include abstracts.screen(md) {
+                font-size: 1.6rem;
+            }
+        }
     }
 }
