@@ -12,11 +12,15 @@
 
 .product-container {
     margin-top: 30px;
+
+    @include abstracts.screen(md) {
+        margin-top: 20px;
+    }
 }
 
-.product-info-container {
+.product-info-content {
     border-radius: 20px;
-    background: #fff;
+    background: var(--product-detail-info-content-bg);
 }
 
 .prod-preview {
@@ -82,11 +86,11 @@
         border-radius: 8px;
         border: 1.5px solid rgb(158 157 168 / 0.3);
 
-        cursor: pointer;
         opacity: 0.9;
         transition: opacity 0.3s, border-color 0.3s;
 
-        &:hover {
+        &:not(&--current):hover {
+            cursor: pointer;
             opacity: 1;
             border-color: #9e9da8;
         }
@@ -100,6 +104,7 @@
 
 .prod-info {
     padding: 60px;
+    border-radius: 10px;
     background: var(--product-detail-info-bg);
 
     @include abstracts.screen(xxl) {
@@ -140,7 +145,6 @@
     }
 
     &__price {
-        color: #000;
         font-size: 1.6rem;
         font-weight: 500;
         line-height: 150%;
@@ -148,7 +152,8 @@
 
     &__tax {
         padding: 2px 8px;
-        background: linear-gradient(0deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.8) 100%), #67b044;
+        border-radius: 4px;
+        background: rgba(103, 176, 68, 0.2);
         color: #67b044;
 
         font-size: 1.4rem;
@@ -157,7 +162,6 @@
     }
     &__total-price {
         margin: 20px 0;
-        color: #000;
         font-size: 2.6rem;
         font-weight: 500;
         line-height: 138.462%;
@@ -178,7 +182,7 @@
     }
 
     &__tag {
-        background: #ededf6;
+        background: var(--product-detail-tag-bg);
     }
 }
 
@@ -199,10 +203,6 @@
     gap: 16px;
 
     margin-top: 30px;
-
-    @include abstracts.screen(md) {
-        margin-top: 20px;
-    }
 
     &:first-of-type &__icon {
         align-self: center;
