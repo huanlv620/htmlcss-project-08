@@ -11,6 +11,15 @@ $error-color: #ed4337;
         display: flex;
         gap: 30px;
 
+        @include abstracts.screen(md) {
+            gap: 20px;
+        }
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            gap: 0;
+        }
+
         > * {
             flex: 1;
         }
@@ -69,7 +78,6 @@ $error-color: #ed4337;
         padding: 12px;
 
         &-input {
-            width: 100%;
             resize: none;
         }
     }
