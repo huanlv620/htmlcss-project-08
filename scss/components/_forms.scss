@@ -193,7 +193,11 @@ $error-color: #ed4337;
         }
 
         @include abstracts.screen(lg) {
-            height: 42px;
+            height: 48px;
+
+            &-icon {
+                width: 20px;
+            }
         }
 
         @include abstracts.screen(sm) {
@@ -217,6 +221,11 @@ $error-color: #ed4337;
         margin-top: 10px;
         overflow-y: auto;
         overscroll-behavior: contain;
+
+        @supports (-webkit-touch-callout: none) {
+            /*Kiểm tra xem có phải trình duyệt sanfari không*/
+            padding-bottom: 300px; /*chỉ áp dụng trên iphone*/
+        }
     }
 
     &__option {
@@ -234,7 +243,8 @@ $error-color: #ed4337;
         }
 
         @include abstracts.screen(lg) {
-            padding: 14px 20px;
+            padding: 18px 30px;
+            font-size: 1.6rem;
         }
     }
 
