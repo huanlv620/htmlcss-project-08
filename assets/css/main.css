@@ -216,7 +216,7 @@ strong {
 .separate {
   margin: var(--margin) 0;
   height: 1px;
-  background: #d2d1d6;
+  background: var(--separate-bg);
 }
 
 .row > *, .container-fluid, .container {
@@ -1410,6 +1410,15 @@ html.dark {
   --checkout-payment-item-bg: #292e39;
   --dialog-bg: #2f3441;
   --dialog-shadow: rgba(23, 28, 40, 0.4);
+  --profile-sidebar-bg: #171c28;
+  --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+  --profile-sidebar-link-hover: #2f3441;
+  --profile-menu-color: #b9babe;
+  --account-info-color: #b9babe;
+  --account-info-bg: #292e39;
+  --account-info-icon-bg: #171c28;
+  --separate-bg: #292e39;
+  --favourite-item-color: #b9babe;
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1479,6 +1488,12 @@ html {
   --checkout-payment-item-bg: #f6f6f6;
   --dialog-bg: #fff;
   --dialog-shadow: rgba(237, 237, 246, 0.2);
+  --profile-sidebar-bg: #fff;
+  --profile-sidebar-shadow: rgba(237, 237, 246, 0.2);
+  --profile-sidebar-link-hover: #ebebeb;
+  --account-info-bg: #f6f6f6;
+  --account-info-icon-bg: #fff;
+  --separate-bg: #d2d1d6;
 }
 @media (max-width: 991.98px) {
   html {
@@ -3238,6 +3253,7 @@ html {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
 }
 .text-content img + em {
   display: block;
@@ -3444,12 +3460,11 @@ html {
   justify-content: center;
   gap: 14px;
   height: 100%;
+  min-height: 170px;
+  color: var(--profile-menu-color);
   border-radius: 10px;
   border: 1px dashed #d2d1d6;
   transition: border-color 0.2s;
-}
-.new-card:hover {
-  border-color: #1a162e;
 }
 .new-card__text {
   font-size: 1.4rem;
@@ -3463,16 +3478,18 @@ html {
   gap: 10px;
   padding: 10px;
   border-radius: 10px;
-  background: #f6f6f6;
+  background: var(--account-info-bg);
+  color: var(--account-info-color);
 }
 .account-info__icon {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 54px;
   height: 54px;
   border-radius: 8px;
-  background: #fff;
+  background: var(--account-info-icon-bg);
 }
 .account-info__title {
   font-size: 1.5rem;
@@ -3489,11 +3506,15 @@ html {
   display: flex;
   align-items: center;
   gap: 20px;
+  color: var(--favourite-item-color);
 }
 .favourite-item__thumb {
-  width: 151px;
-  height: 108px;
-  object-fit: contain;
+  width: 110px;
+}
+@media (max-width: 991.98px) {
+  .favourite-item__thumb {
+    width: 80px;
+  }
 }
 .favourite-item__title {
   font-size: 1.5rem;
@@ -3505,6 +3526,12 @@ html {
   align-items: center;
   gap: 20px;
   margin-top: 10px;
+}
+@media (max-width: 575.98px) {
+  .favourite-item__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .favourite-item__price {
   font-size: 2.2rem;
@@ -3849,6 +3876,12 @@ html {
   font-weight: 500;
   line-height: 138.462%;
 }
+@media (max-width: 575.98px) {
+  .prod-info__heading {
+    font-size: 1.8rem;
+    line-height: 144.444%;
+  }
+}
 .prod-info__label {
   margin-top: 30px;
 }
@@ -4028,6 +4061,11 @@ html {
   font-weight: 700;
   line-height: 141.667%;
 }
+@media (max-width: 575.98px) {
+  .cart-info__heading {
+    font-size: 1.8rem;
+  }
+}
 .cart-info__heading--lv2 {
   font-size: 2.2rem;
   font-weight: 500;
@@ -4043,6 +4081,11 @@ html {
   margin-top: 6px;
   font-size: 1.5rem;
   line-height: 146.667%;
+}
+@media (max-width: 575.98px) {
+  .cart-info__desc {
+    font-size: 1.4rem;
+  }
 }
 .cart-info__form {
   margin-bottom: 30px;
@@ -4489,8 +4532,8 @@ html {
 .profile__sidebar {
   padding-bottom: 30px;
   border-radius: 20px;
-  background: #fff;
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  background: var(--profile-sidebar-bg);
+  box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
   overflow: hidden;
 }
 .profile-user {
@@ -4499,7 +4542,7 @@ html {
   align-items: center;
   padding: 35px 20px 20px;
   background: linear-gradient(180deg, rgba(26, 22, 46, 0) 0%, #1a162e 100%), url("../img/profile/cover.png") no-repeat center/cover;
-  box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+  box-shadow: 0px 20px 60px 10px var(--profile-sidebar-shadow);
   color: #fff;
 }
 .profile-user__avatar {
@@ -4525,6 +4568,7 @@ html {
 .profile-menu {
   margin-top: 30px;
   padding: 0 30px;
+  color: var(--profile-menu-color);
 }
 .profile-menu__title {
   font-size: 1.8rem;
@@ -4546,7 +4590,7 @@ html {
   transition: background-color 0.2s;
 }
 .profile-menu__link:hover {
-  background: #ebebeb;
+  background: var(--profile-sidebar-link-hover);
 }
 .profile-menu__icon {
   display: flex;

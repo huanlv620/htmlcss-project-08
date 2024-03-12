@@ -99,14 +99,12 @@
     justify-content: center;
     gap: 14px;
     height: 100%;
+    min-height: 170px;
+    color: var(--profile-menu-color);
 
     border-radius: 10px;
     border: 1px dashed #d2d1d6;
     transition: border-color 0.2s;
-
-    &:hover {
-        border-color: #1a162e;
-    }
 
     &__text {
         font-size: 1.4rem;
