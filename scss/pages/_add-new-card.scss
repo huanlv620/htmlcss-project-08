@@ -1,3 +1,5 @@
+@use "../abstracts";
+
 .form-card {
     &__label {
         margin-bottom: 20px;
@@ -17,5 +19,9 @@
     &__btn {
         font-size: 1.6rem;
         font-weight: 500;
+
+        @include abstracts.screen(sm) {
+            flex: 1;
+        }
     }
 }

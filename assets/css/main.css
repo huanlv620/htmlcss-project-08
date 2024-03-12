@@ -4626,5 +4626,10 @@ html {
   font-size: 1.6rem;
   font-weight: 500;
 }
+@media (max-width: 575.98px) {
+  .form-card__btn {
+    flex: 1;
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
