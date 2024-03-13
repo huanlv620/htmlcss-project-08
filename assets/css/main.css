@@ -1365,6 +1365,7 @@ html.dark {
   --header-act-dropdown-bg: #2f3441;
   --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
   --header-act-dropdown-border-color: #171c28;
+  --header-user-menu-link-hover: initial;
   --drop-down-bg-color: #2f3441;
   --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(27%) saturate(487%) hue-rotate(185deg)
@@ -1451,6 +1452,7 @@ html {
   --header-act-dropdown-bg: #fff;
   --header-act-dropdown-shadow: rgba(200, 200, 200, 0.4);
   --header-act-dropdown-border-color: #d2d1d6;
+  --header-user-menu-link-hover: rgb(113 127 159 / 10%);
   --drop-down-bg-color: #fff;
   --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
   --top-menu-border-color: #d2d1d6;
@@ -1936,7 +1938,7 @@ html {
   padding: 14px 0;
 }
 .user-menu__link:hover {
-  background-color: rgba(113, 127, 159, 0.1);
+  background-color: var(--header-user-menu-link-hover);
 }
 .user-menu__icon-wrap {
   display: flex;
