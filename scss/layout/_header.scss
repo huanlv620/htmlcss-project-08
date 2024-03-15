@@ -19,7 +19,11 @@
     @extend %FlexItemCenter;
     position: relative;
     z-index: 1;
-    padding: 30px 0px;
+    padding: 20px 0px;
+
+    @include abstracts.screen(md) {
+        justify-content: space-between;
+    }
 
     &__logo {
         @include abstracts.screen(lg) {
@@ -38,15 +42,6 @@
         @include abstracts.screen(md) {
             margin-left: 0;
         }
-    }
-
-    @include abstracts.screen(lg) {
-        padding: 20px 0px;
-    }
-
-    @include abstracts.screen(md) {
-        justify-content: space-between;
-        padding: 16px 0px;
     }
 }
 
